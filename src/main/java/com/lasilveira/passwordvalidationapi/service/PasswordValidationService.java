@@ -3,6 +3,7 @@ package com.lasilveira.passwordvalidationapi.service;
 import org.springframework.stereotype.Service;
 
 import com.lasilveira.passwordvalidationapi.controller.PasswordValidationRequest;
+import com.lasilveira.passwordvalidationapi.controller.PasswordValidationResponse;
 import com.lasilveira.passwordvalidationapi.model.*;
 
 @Service
@@ -20,14 +21,11 @@ public class PasswordValidationService {
 							new NoRepeatedCharactersValidator()))))));
 	}
 	
-	public boolean validatePassword(PasswordValidationRequest request) {
+	public PasswordValidationResponse validatePassword(PasswordValidationRequest request) {
 		String password = request.getPassword();
-		return passwordValidator.validate(password);
-		
-//		if (password.equals("pass"))
-//			return true;
-//		else
-//			return false;
+		boolean result = passwordValidator.validate(password);
+		System.out.println("PasswordValidationResponse validatePassword: result=" + result);
+		return new PasswordValidationResponse(result);
 	}
 
 }

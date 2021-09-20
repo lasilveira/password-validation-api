@@ -23,7 +23,7 @@ public class PasswordValidationController implements PasswordValidationAPI{
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public boolean validatePassword(@RequestBody PasswordValidationRequest request) {
+	public PasswordValidationResponse validatePassword(@RequestBody PasswordValidationRequest request) {
 		System.out.println(request.toString());
 		return validationService.validatePassword(request);
 	}

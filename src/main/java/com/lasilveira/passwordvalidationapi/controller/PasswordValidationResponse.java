@@ -2,12 +2,25 @@ package com.lasilveira.passwordvalidationapi.controller;
 
 public class PasswordValidationResponse {
 
-	@SuppressWarnings("unused")
-	private boolean isValid;
+	private boolean valid;
+
+	public PasswordValidationResponse(boolean valid) {
+		this.valid = valid;
+	}
 	
-	public PasswordValidationResponse(boolean isValid) {
-		System.out.println(isValid);
-		this.isValid = isValid;
+	@Override
+	public String toString() {
+		return "PasswordValidationResponse [valid=" + valid + "]";
 	}
 
+	public boolean isValid() {
+		return valid;
+	}
+
+	public void setValid(boolean valid) {
+		this.valid = valid;
+	}
+
+
+	
 }
