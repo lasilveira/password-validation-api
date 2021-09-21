@@ -1,4 +1,4 @@
-package com.lasilveira.passwordvalidationapi;
+package com.lasilveira.passwordvalidationapi.it;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lasilveira.passwordvalidationapi.controller.PasswordValidationRequest;
@@ -30,7 +30,7 @@ public class PasswordValidationApiIntegrationTests {
     @Autowired
     protected WebApplicationContext context;
 	
-	private ObjectMapper mapper;
+    private ObjectMapper mapper;
     private MockMvc mockMvc;
     private PasswordValidationRequest request;
     
@@ -41,7 +41,7 @@ public class PasswordValidationApiIntegrationTests {
     	mapper = new ObjectMapper();
         mapper.findAndRegisterModules();
         mockMvc = webAppContextSetup(context).build();
-        request = new PasswordValidationRequest();
+        request = new PasswordValidationRequest(null);
     }
     
     @Test
