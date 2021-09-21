@@ -1,8 +1,8 @@
 package com.lasilveira.passwordvalidationapi.model;
 
-public abstract class RegExValidator extends PasswordRuleValidator {
+public abstract class RegExValidator extends ChainableRuleValidator {
 
-	protected String regEx;
+	private String regEx;
 	
 	public RegExValidator(String regEx, RuleValidator nextRule) {
 		super(nextRule);

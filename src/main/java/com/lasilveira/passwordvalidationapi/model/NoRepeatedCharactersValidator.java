@@ -3,7 +3,7 @@ package com.lasilveira.passwordvalidationapi.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class NoRepeatedCharactersValidator extends PasswordRuleValidator {
+public class NoRepeatedCharactersValidator extends ChainableRuleValidator {
 
 	private Set<Character> characters;
 	

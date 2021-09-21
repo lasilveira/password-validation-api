@@ -1,8 +1,8 @@
 package com.lasilveira.passwordvalidationapi.model;
 
-public abstract class PasswordRuleValidator implements RuleValidator {
+public abstract class ChainableRuleValidator implements RuleValidator {
 
-	public PasswordRuleValidator(RuleValidator nextRule) {
+	public ChainableRuleValidator(RuleValidator nextRule) {
 		this.nextRule = nextRule;
 	}
 	

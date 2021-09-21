@@ -1,6 +1,6 @@
 package com.lasilveira.passwordvalidationapi.model;
 
-public class MinLengthValidator extends PasswordRuleValidator {
+public class MinLengthValidator extends ChainableRuleValidator {
 
 	private int minLength;
 	
