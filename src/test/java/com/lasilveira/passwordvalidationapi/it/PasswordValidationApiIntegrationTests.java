@@ -34,7 +34,7 @@ public class PasswordValidationApiIntegrationTests {
     private MockMvc mockMvc;
     private PasswordValidationRequest request;
     
-    private static final String password_url = "/v1/password";
+    private static final String password_url = "/api/v1/password";
     
     @Before
     public void setup() {
@@ -49,6 +49,7 @@ public class PasswordValidationApiIntegrationTests {
 		assertNotNull(mockMvc);
 		assertNotNull(context);
 		assertNotNull(mapper);
+		assertNotNull(request);
 	}
     
     @Test
