@@ -1,0 +1,30 @@
+// Rule Validator Class Diagram
+// Can be generated at yuml.me
+// ------------------
+// {type:class}
+// {generate:false}
+// {direction:topDown}
+
+// Class association and inheritance
+[RuleValidator]^-.-[ChainableRuleValidator]
+[ChainableRuleValidator]<>-0..1>[RuleValidator]
+
+[ChainableRuleValidator]^[MinLengthValidator]
+[ChainableRuleValidator]^[NoRepeatedCharactersValidator]
+[ChainableRuleValidator]^[RegexValidator]
+
+[RegexValidator]^[NoBlankSpaceValidator]
+[RegexValidator]^[AtLeastOneOfValidator]
+
+[AtLeastOneOfValidator]^[AtLeastOneDigitValidator]
+[AtLeastOneOfValidator]^[AtLeastOneLowercaseValidator]
+[AtLeastOneOfValidator]^[AtLeastOneUppercaseValidator]
+[AtLeastOneOfValidator]^[AtLeastOneSpecialCharValidator]
+
+//Details
+[<<interface>>;RuleValidator|+validate(String): boolean]
+[<<abstract>>ChainableRuleValidator|-nextRule: RuleValidator|_#doValidate(String): boolean_]
+[<<abstract>>RegexValidator|-regEx: String]
+[<<abstract>>AtLeastOneOfValidator]
+[MinLengthValidator|-minLength: int]
+[NoRepeatedCharactersValidator|-characters: Set]
