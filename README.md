@@ -29,6 +29,8 @@ Para a implementação, foi utilizada uma variação do padrão *Chain of Respon
 
 Toda regra de validação da senha deve herdar da classe abstrata **ChainableRuleValidator** se quiser pertencer a uma cadeia de regras. Porém, o uso da interface **RuleValidator** mantém a solução extensível para outras abordagens. Uma classe abstrata **RegExValidator** permite a verificação de expressões regulares contra o *input*, e a classe **AtLeastOneOfValidator** verifica a existência de ao menos um caractere dentre um conjunto.
 
+Além disso, foi utilizado o padrão *Builder* para tornar a criação de uma cadeia de validadores mais legível e padronizada.
+
 <br>
 
 ## Diagrama de Classes

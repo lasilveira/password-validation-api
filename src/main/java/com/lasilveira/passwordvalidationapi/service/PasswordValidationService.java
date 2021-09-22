@@ -14,13 +14,15 @@ public class PasswordValidationService {
 	private static final Logger logger = Logger.getLogger(PasswordValidationService.class);
 
 	public PasswordValidationService() {
-		passwordValidator =	new NoBlankSpaceValidator(
-							new MinLengthValidator(9,
-							new AtLeastOneDigitValidator(
-							new AtLeastOneLowerCaseValidator(
-							new AtLeastOneUpperCaseValidator(
-							new AtLeastOneSpecialCharValidator(
-							new NoRepeatedCharactersValidator()))))));
+		passwordValidator =	RuleValidatorChainBuilder.builder()
+		                    .withMinLength(9)
+		                    .withNoBlankSpace()
+		                    .withAtLeastOneDigit()
+		                    .withAtLeastOneLowerCase()
+		                    .withAtLeastOneUpperCase()
+		                    .withAtLeastOneSpecialChar()
+		                    .withNoRepeatedCharacters()
+		                    .build();
 	}
 	
 	public PasswordValidationResponse validatePassword(PasswordValidationRequest request) {
