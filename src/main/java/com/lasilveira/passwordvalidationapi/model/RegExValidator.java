@@ -14,7 +14,7 @@ public abstract class RegExValidator extends ChainableRuleValidator {
 		try {			
 			return password.matches(regEx);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			logger.error(e);
 			return false;
 		}
 	}

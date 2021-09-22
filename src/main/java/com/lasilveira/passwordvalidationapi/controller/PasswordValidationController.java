@@ -24,7 +24,6 @@ public class PasswordValidationController implements PasswordValidationAPI{
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public PasswordValidationResponse validatePassword(@RequestBody PasswordValidationRequest request) {
-		System.out.println(request.toString());
 		return validationService.validatePassword(request);
 	}
 

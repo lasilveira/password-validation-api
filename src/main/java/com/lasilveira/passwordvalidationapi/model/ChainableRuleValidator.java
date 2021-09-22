@@ -1,5 +1,7 @@
 package com.lasilveira.passwordvalidationapi.model;
 
+import org.apache.log4j.Logger;
+
 public abstract class ChainableRuleValidator implements RuleValidator {
 
 	public ChainableRuleValidator(RuleValidator nextRule) {
@@ -7,6 +9,7 @@ public abstract class ChainableRuleValidator implements RuleValidator {
 	}
 	
 	private RuleValidator nextRule;
+	protected static final Logger logger = Logger.getLogger(ChainableRuleValidator.class);
 	
 	@Override
 	public boolean validate(String text) {
