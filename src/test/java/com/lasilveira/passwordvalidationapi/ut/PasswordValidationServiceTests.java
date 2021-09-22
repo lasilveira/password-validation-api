@@ -32,6 +32,7 @@ public class PasswordValidationServiceTests {
         assertFalse(validationService.validatePassword(new PasswordValidationRequest("ABCDEFGHI123")).isValid());
         assertFalse(validationService.validatePassword(new PasswordValidationRequest("ABCdefGHI123")).isValid());
         assertFalse(validationService.validatePassword(new PasswordValidationRequest("ABCdeffGHI123@")).isValid());
+        assertFalse(validationService.validatePassword(new PasswordValidationRequest("ABCdefGHI123@ ")).isValid());
         
         assertFalse(validationService.validatePassword(new PasswordValidationRequest("")).isValid());
         assertFalse(validationService.validatePassword(new PasswordValidationRequest("aa")).isValid());
