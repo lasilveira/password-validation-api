@@ -27,4 +27,3 @@
 [<<abstract>>RegexValidator|-regEx: String]
 [<<abstract>>AtLeastOneOfValidator]
 [MinLengthValidator|-minLength: int]
-[NoRepeatedCharactersValidator|-characters: Set]
