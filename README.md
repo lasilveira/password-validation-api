@@ -1,5 +1,7 @@
 # Password Validator
 
+[![Build Status](https://app.travis-ci.com/lasilveira/password-validation-api.svg?branch=master)](https://app.travis-ci.com/lasilveira/password-validation-api)
+
 ## Solução
 
 Foi implementado um servidor Web que roda na porta **8080**, na linguagem *Java*, utilizando o framework *Spring Boot*.
